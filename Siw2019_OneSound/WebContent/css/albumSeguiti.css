@@ -1,0 +1,108 @@
+.trasparente{
+	background-color: transparent;
+}
+
+.sfondo {
+	background: transparent;
+	display: grid;
+}
+/*.play {
+	opacity: 0;
+	position: absolute;
+	transform: translate(25%, 25%) !important;
+	z-index: 1000;
+}
+
+.play {
+	opacity: 1;
+	width: 40%;
+	top: 45%;
+	left: 50%;
+}*/
+#laX {
+	font-size: large; /*small per la x*/
+	color: gray;
+	height: 15px;
+	position: absolute; /*da togliere se vuoi passare al vecchio stile*/
+}
+
+#laX:hover {
+	font-size: x-large;
+	color: white; /* mettere red per la X normale*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heart{
+	background-color: red;
+}
+
+
+
+.copertina {
+	object-fit: cover;
+	height: 200px;
+	/*width: 160px;*/
+}
+
+.testo {
+	font-family: inherit;
+	text-align: center;
+}
+
+.bordo {
+	border: groove;
+}
+
+.bordo:hover {
+	border-color: #8396c1;
+}
+
+.dimensioni {
+	/*height: 200px;
+	width: 200px;*/
+	
+}
+
+.play {
+	opacity: 0;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+}
+
+.play {
+	opacity: 1;
+	width: 40%;
+	top: 45%;
+	left: 50%;
+}

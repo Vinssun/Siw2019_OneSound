@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+#searchBar{
+	display: inline-flex;
+    width: 60%;
+    height: 100%;
+    left: 50%;
+    position: relative;
+    z-index: 100;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%, 0%);
+}
+#inputRicerca,#search{
+	 margin:auto;
+	 border-radius: 1.3rem!important;
+}
+
+#genresTitle{
+	padding-bottom: 5%;
+}
+
+.genresImage:hover{
+	cursor: pointer;
+}

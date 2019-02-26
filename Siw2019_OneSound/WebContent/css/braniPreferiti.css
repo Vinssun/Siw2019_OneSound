@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+
+.crop { 
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+}
+
+
+#filter{
+	display: flex;
+}
+
+#filterComboBox{
+	margin: auto;
+	height: 49px;
+}
+
+#titleSpan {
+	width: 30% !important;
+	margin: auto;
+}
+
+#titleSongSpan {
+	width: 40% !important;
+	margin: auto;
+}
+
+.moreButton{
+	display: grid;
+}
+
+#playSpan, #addSpan{
+	width: 7%;
+	margin: auto;
+}
+
+#playSongSpan, #addSongSpan ,#heartSongSpan{
+	width: 15%;
+	margin: auto;
+}
+
+
+#playImage{
+	width: 45%
+}
+
+#heartSongImage,#addSongImage{
+	width: 25%
+}
+
+
+#addImage{
+	width: 35%
+}
+
+#addImage,#playImage,#heartSongImage:hover {
+	cursor: pointer;
+}
+ 
+#imageSpan {
+	width: 16%;
+	margin: auto;
+}
+
+#genreSpan {
+	margin: auto;
+}
+
+#artistSpan, #albumSpan{
+	width: 10%;
+	margin: auto;
+}
+
+
+#coverImage {
+	width: 70%;
+}
+
+
+#songsList li {
+	color: white;
+	border-color: #616060;
+	border-width: 1.5px;
+	background: transparent;
+}
+
+#songsList li {
+	display: inline-flex;
+}
+
+.standardSpan:hover {
+	background: #262626 !important;
+	color: white!important;
+}

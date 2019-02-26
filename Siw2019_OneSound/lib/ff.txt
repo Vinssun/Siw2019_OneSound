@@ -1,0 +1,20 @@
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+					<!--  
+						<c:if test="${username != null}">
+							<p>Sei loggato come ${username}</p>
+						<!--  <a href="doLogin?logout=true">Logout</a>
+						<li><a href="doLogin"><i class="fa fa-user-o"></i> Login</a></li>
+					</c:if>
+					<c:if test="${username == null}">
+						<li><a href="doLogin"><i class="fa fa-user-o"></i> Ciao</a></li>
+					</c:if>
+					-->
+				<!--  	<li><a href="doLogin"><i class="fa fa-user-o"></i> Login</a></li> -->
+ * 
+	
+	

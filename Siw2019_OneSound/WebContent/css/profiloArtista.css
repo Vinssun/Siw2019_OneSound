@@ -1,0 +1,51 @@
+@charset "ISO-8859-1";
+
+#artistProfileImage{
+	border-radius: 50%;
+	object-fit: cover;
+	width: 300px;
+ 	height: 300px;
+}
+
+#artistTopImage{
+	position: absolute;
+    width: 552px;
+    bottom: 0;
+    left: 50%;
+    z-index: 100;
+    text-align: center;
+    padding-top: 40px;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%,30%);
+}
+
+@media (max-width: 767px) {
+  	#artistProfileImage{
+	border-radius: 50%;
+	object-fit: cover;
+	width: 200px;
+ 	height: 200px;
+	}
+}
+
+#artistBody{
+	padding-top: 10%;
+}
+
+@media (max-width: 1300px) {
+  	#artistBody{
+		padding-top: 15%;
+	}
+}
+@media (max-width: 1000px) {
+  	#artistBody{
+		padding-top: 20%;
+	}
+}
+@media (max-width: 800px) {
+  	#artistBody{
+		padding-top: 25%;
+	}
+}
+
+

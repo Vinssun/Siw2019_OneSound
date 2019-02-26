@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+
+
+
+<body>
+
+<input type="text" id="nome">
+<button type="button" onclick="cercaSuFlickr()">Cerca Su Flickr</button>
+
+
+<img id = "im" alt="" src="">
+
+<div id = "prova"></div>
+
+
+ <script src="js/jquery/jquery-2.2.4.min.js"></script>
+   
+<script type="text/javascript">
+	
+	 
+	function cerca() {
+	
+	var parola=$("#nome").val();
+	alert(parola);
+	
+	var partePrima = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=71542c171848da257b3caa214f7ed00f&text=";
+	var parteSeconda = "&format=json&nojsoncallback=1";
+	
+	var chiamata = partePrima + parola + parteSeconda;
+	
+	//window.location.href=chiamata;
+		$.ajax({
+	        type: 'GET',
+	        url: chiamata,
+	  		dataType: "text",		
+			success: function (data){
+				var json = JSON.parse(data);
+
+				alert(json.photos.photo[5].id);
+				
+				var foto = "https://farm" + json.photos.photo[5].farm + ".staticflickr.com/" + json.photos.photo[5].server + "/" + json.photos.photo[5].id + "_" + json.photos.photo[5].secret + ".jpg";
+				$("#prova").html(data);
+				$("#im").attr("src",foto);
+				
+			},
+	        beforeSend: function(){  
+	        	
+	        	
+	        },
+	        
+			
+			
+	       error: function(){
+	    	   window.location.href = "pageNotFound.jsp";
+	       }
+	       
+	        
+	    });
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//window.location.href="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=71542c171848da257b3caa214f7ed00f&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1";
+	
+	//URL PER LA RICERCA CON TESTO
+	
+	//window.location.href="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=71542c171848da257b3caa214f7ed00f&text=sky&format=json&nojsoncallback=1";
+	//window.location.href="https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg"
+	//  window.location.href="https://farm8.staticflickr.com/7900/32246953987_6c5a5d497d.jpg"
+	  
+	
+	/*var options = { 
+		  "api_key": "71542c171848da257b3caa214f7ed00f",
+		  "method": "flickr.photos.search", // You can replace this with whatever method,
+		                                  // flickr.photos.search fits your use case best, though.
+		  "format": "json",
+		  "nojsoncallback": "1",
+		  "text": "sky"  // This is where you'll put your "file name"
+		}
+
+		makeFlickrRequest(options, function(data) { alert(data) }); // Leaving the actual 
+	
+	
+	
+	
+	
+	var makeFlickrRequest = function(options, cb) {
+	  var url, xhr, item, first;
+	
+	  url = "http://api.flickr.com/services/rest/";
+	  first = true;
+	
+	  for (item in options) {
+	    if (options.hasOwnProperty(item)) {
+	      url += (first ? "?" : "&") + item + "=" + options[item];
+	      first = false;
+	    }
+	  }
+	
+	  xhr = new XMLHttpRequest();
+	  xhr.onload = function() { cb(this.response); };
+	  xhr.open('get', url, true);
+	  xhr.send();
+  
+  	function cb() {
+		alert("ciaoooo");
+	}*/
+
+	
+//}
+
+</script>                                	
+</body>
+</html> 

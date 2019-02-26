@@ -1,0 +1,56 @@
+#loading_screen {
+  display:none;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid black; /* Blue */
+	
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 35px auto 0 auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#infoEmail{
+	color: red;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-show-pass:hover {
+    color: #6a7dfe;
+}
+
+.btn-show-pass {
+    font-size: 15px;
+    color: #999999;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding-right: 5px;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}

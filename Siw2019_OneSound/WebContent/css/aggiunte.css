@@ -1,0 +1,122 @@
+#centrale28{
+	text-align: center;
+	display: inline-block;
+}
+.conteiner{
+	background: #171717!important;
+}
+
+.cuore {
+	color: gray;
+}
+
+#followArtista {
+	font-size: x-large;
+}
+
+#followAlbum {
+	font-size: small;
+}
+
+#piu {
+	font-size: small;
+	color: gray;
+}
+
+#canzoniAlbum28 {
+	width: 850px;
+}
+
+#playMusica {
+	/*width: max-content;*/
+	width: 850px;
+}
+
+.scroll {
+	overflow-y: scroll;
+	height: 70px;
+}
+
+.testoBianco28 {
+	color: white;
+}
+
+.spaziatura283 {
+	margin-top: 30px;
+}
+
+.spaziatura282 {
+	float: right;
+	margin-top: 30px;
+}
+
+/*
+#inputRicerca {
+	margin-top: 70px;
+	width: 450px;
+	text-align: inherit;
+	margin-left: 400px;
+	margin-right: 20px;
+	
+}
+
+#search {
+	transform: translate(0%, 90%);
+	height: 40px;
+	min-width: 30px;
+}
+*/
+#c28 {
+	display: flex;
+}
+
+.product {
+	position: relative;
+	margin: 15px 0px;
+	-webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+	box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	margin: auto;
+	width: auto;
+}
+
+.product:hover {
+	-webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #2992d2;
+	box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #2992d2;
+}
+
+.product .product-body {
+	position: relative;
+	padding: 15px;
+	background-color: #FFF;
+	text-align: center;
+	z-index: 20;
+}
+
+
+
+#loading_screen, #loading_screen2 {
+  display:none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid black;/* Blue */
+	
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 110px auto 40px auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#centratura {
+	display: -webkit-box;
+}
+#title{
+	color: white;
+	font-size: 4vw;
+	margin: 56px 0 70px 0px;
+}
