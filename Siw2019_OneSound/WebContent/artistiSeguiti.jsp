@@ -11,8 +11,6 @@
 <div>
 	<section class="contact-area bg-img bg-overlay bg-fixed has-bg-img" style="min-height: -webkit-fill-available;">
 
-
-
 			 <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid section-padding-100">
         <div class="container-fluid">
