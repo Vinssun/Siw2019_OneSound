@@ -272,10 +272,14 @@ public class PlaylistPubblicaDaoJDBC implements PlaylistPubblicaDao {
 		Connection connection = this.dataSource.getConnection();
 		try {
 
-			String insert = "INSERT IGNORE INTO public.brano_playlist_pb(playlist_pubblica,brano)VALUES (?, ?);";
+			String insert = " INSERT INTO public.brano_playlist_pb(playlist_pubblica,brano) \r\n" + 
+					"     SELECT ?, ? \r\n" + 
+					"     WHERE NOT EXISTS (SELECT * FROM test WHERE playlist_pubblica=? and brano=?);";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, idPlaylist);
 			statement.setInt(2, brano);
+			statement.setInt(3, idPlaylist);
+			statement.setInt(4, brano);
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
