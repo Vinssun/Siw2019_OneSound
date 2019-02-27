@@ -47,6 +47,7 @@
 						 	<li id="song${songsCount}"  data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
 								  <span id="imageSpan"><img class="im" id="coverImage" src="${p.album.immagine }" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="playB" src="img/play.png" alt=""></span>
+								  <span></span>
 								  <span id="heartSongSpan"><img id="heartSongImage" data-id="${p.id}" class="heartSongImageClass" src="img/full-heart.png" alt=""></span>
 								  <span id="titleSongSpan" class="crop"><label id="nameSurname" data-toggle="tooltip" data-placement="left" title="${p.titolo}">${p.titolo}</label></span>
 								  <span id="artistSpan" class="crop"><label id="nameSurname" data-toggle="tooltip" data-placement="left" title="${p.utenteCaricatore.nickname}">${p.utenteCaricatore.nickname}</label></span>

@@ -79,7 +79,7 @@
 			
 			 
 					<li id="song${songsCount}" data-idSong="${p.id}" class="list-group-item standardSpan songElement">
-					  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+					  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine}" alt=""></span>
 					  <span id="playSongSpan"><img data-type="brano" id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
 					  <span id="addSongSpan"><img id="addImage" class="addB" src="img/darkAdd.png" alt=""></span>
 					  <c:if test="${p.preferito == true}">
@@ -131,7 +131,7 @@
 			<!-- foreach --> 
 			
 					<li id="album${albumCount}" class="list-group-item standardSpan albumElement">
-					  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+					  <span id="imageSpan"><img id="coverImage" src="${p.immagine}" alt=""></span>
 					  <span id="playSpan"><img data-type="album" id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
 					   <c:if test="${p.seguito == true}">
 	                       	 		<span id="addSpan"><img id="addImage" data-id="${p.id}" class="addAlbum" src="img/check.png" alt=""></span>
@@ -175,7 +175,7 @@
 			<c:forEach items="${playlists}" var="p"> 
 			<!-- foreach --> 
 					<li id="playlist${playlistCount}" class="list-group-item standardSpan playlistElement">
-					  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+					  <span id="imageSpan"><img id="coverImage" src="${p.immagine }" alt=""></span>
 					  <span id="playSpan"><img data-type="playlist"  id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
 					   <c:if test="${p.seguito == true}">
 	                       	 		<span id="addSpan"><img id="addImage" data-id="${p.id}" class="addPlaylist" src="img/check.png" alt=""></span>

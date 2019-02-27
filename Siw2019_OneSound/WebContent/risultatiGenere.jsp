@@ -26,7 +26,7 @@
 			 
 			 
 					<li id="song${songsCount}" data-idSong="${p.id}" class="list-group-item standardSpan songElement">
-					  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+					  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine}" alt=""></span>
 					  <span id="playSongSpan" data-type="brano"><img data-idAlbum="${p.album.id }" data-id="${p.id }" id="playImage"  class="playB" src="img/darkPlay.png" alt=""></span>
 					  <span id="addSongSpan"><img id="addImage" class="addB" src="img/darkAdd.png" alt=""></span>
 					  <c:if test="${p.preferito == true}">
