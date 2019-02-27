@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/aggiunte.css">
     
 
-<div >
+
 	
         <div class="container pt-5">
 						<div class="row">
