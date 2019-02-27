@@ -281,7 +281,6 @@ public class PlaylistPubblicaDaoJDBC implements PlaylistPubblicaDao {
 			statement.setInt(3, idPlaylist);
 			statement.setInt(4, brano);
 			statement.executeUpdate();
-
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
 		} finally {
