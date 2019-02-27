@@ -8,6 +8,7 @@ $("#albumImage").css("width","50%")
 $("#modify").css("opacity", "1")
 var width = $("#albumImage").css("width")
 	$("#albumImage").css("height",""+width)
+	
 $(".playlistImage").each(function(){
 		$(this).css("width","300")
 		var width = $(this).css("width")
@@ -166,7 +167,7 @@ $(".p").on("click",function(){
 	  		dataType: "text",
 	  		
 			success: function (data){
-				alert("successo")
+				//alert("successo")
 				
 			},
 	       
@@ -188,6 +189,9 @@ $(".p").on("click",function(){
 		eVal=""
 			
 		id= $(this).attr("data-idplaylist")
+		n = $(this).children(".playlistImage").attr('data-nome')
+		imm = $(this).children(".playlistImage").attr('src')
+		//alert(n)
 		if(t=="pb")
 			eVal='getBraniPlaylistPb'
 		else
@@ -195,7 +199,7 @@ $(".p").on("click",function(){
 		$.ajax({
 			type : 'GET',
 			url : eVal,
-			data: {idPlaylist:id},
+			data: {idPlaylist:id,nome:n,immagine:imm},
 	  		dataType: "text",
 			
 			success : function(data) {
@@ -231,7 +235,7 @@ $(document).on("click",".x",function(){
 	  		dataType: "text",
 	  		
 			success: function (data){
-				alert("successo")
+				//alert("successo")
 				
 			},
 	       

@@ -52,6 +52,8 @@ public class GestionePlaylist extends HttpServlet {
 		
 		if (path.equals("/getBraniPlaylistPb")) {
 			int id =Integer.parseInt(req.getParameter("idPlaylist"));
+			String nome = req.getParameter("nome");
+			String immagine =req.getParameter("immagine");
 			Brano brano=null;
 			List<Brano> brani=bDao.findByPlaylistPubblica(id);
 			
@@ -61,12 +63,16 @@ public class GestionePlaylist extends HttpServlet {
 				brano=brani.get(0);
 			
 			req.setAttribute("idPlaylist", id);
+			req.setAttribute("nome", nome);
+			req.setAttribute("immagine", immagine);
 			req.setAttribute("brano", brano);
 			
 			rd = req.getRequestDispatcher("braniPlaylistPb.jsp");
 			rd.forward(req, res);
 		}else if(path.equals("/getBraniPlaylistPr")) {
 			int id =Integer.parseInt(req.getParameter("idPlaylist"));
+			String nome = req.getParameter("nome");
+			String immagine =req.getParameter("immagine");
 			Brano brano=null;
 			List<Brano> brani=bDao.findByPlaylistPrivata(id);
 			
@@ -76,6 +82,8 @@ public class GestionePlaylist extends HttpServlet {
 				brano=brani.get(0);
 			
 			req.setAttribute("idPlaylist", id);
+			req.setAttribute("nome", nome);
+			req.setAttribute("immagine", immagine);
 			req.setAttribute("brano", brano);
 			
 			rd = req.getRequestDispatcher("braniPlaylistPr.jsp");
@@ -112,9 +120,12 @@ public class GestionePlaylist extends HttpServlet {
 			String tipo = request.getParameter("tipo");
 			int idPlaylist = Integer.parseInt(request.getParameter("idPlaylist"));
 			int idBrano = Integer.parseInt(request.getParameter("brano"));
+			System.out.println("TIPO:"+tipo);
 			if (tipo.equals("pb")) {
+				System.out.println("pubblica");
 				pbDao.removeBrano(idPlaylist, idBrano);
 			} else if (tipo.equals("pr")) {
+				System.out.println("privata");
 				prDao.removeBrano(idPlaylist, idBrano);
 			}
 

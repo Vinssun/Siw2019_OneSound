@@ -131,6 +131,7 @@ public class Ricerca extends HttpServlet {
 				brano=brani.get(0);
 			
 			req.setAttribute("idPlaylist", id);
+			req.setAttribute("playlist", p);
 			req.setAttribute("brano", brano);
 			
 			rd = req.getRequestDispatcher("newMediaPlayerPlaylist.jsp");

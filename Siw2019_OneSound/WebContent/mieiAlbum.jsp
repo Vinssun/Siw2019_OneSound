@@ -37,9 +37,7 @@
 						<img class="playlistImage" src="${p.immagine}" alt=""> 
 						<img class="play" data-id="${p.id}" src="img/play.png" alt="">
 						<div class="album-info">
-							<a href="#">
 								<h5>${p.titolo}</h5>
-							</a>
 						</div>
 					</div>
 	              </c:forEach>

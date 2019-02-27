@@ -38,9 +38,7 @@
 			                            </div> -->
 			                        </div>
 			                        <div class="album-info">
-			                            <a href="#">
 			                               <h5 class = "testoBianco28 testo">${p.titolo}</h5>
-			                            </a>
 			                        </div>
 			                    </div>
 			                </div>

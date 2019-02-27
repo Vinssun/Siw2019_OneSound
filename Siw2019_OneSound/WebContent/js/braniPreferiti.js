@@ -22,6 +22,23 @@ $(".heartSongImageClass").on("click",function(){
 	
 });
 
+$(document).ready(function() {
+	$(".im").each(function(){
+			$(this).css("max-height","150")
+			$(this).css("width","100")
+			var width = $(this).css("width")
+			$(this).css("height",""+width)
+	});
+});
+$(window).on('resize', function(){
+	$(".im").each(function(){
+		var width = $(this).css("width")
+		$(this).css("height",""+width)
+	});
+
+});
+
+/*
 $(".playB").on("click",function(){
 	
 	
@@ -32,4 +49,4 @@ $(".playB").on("click",function(){
 	
 	window.location.href = operation;
 	
-});
+});*/

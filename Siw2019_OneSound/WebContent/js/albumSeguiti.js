@@ -23,8 +23,24 @@ function(){
 	$(this).find(".playlistImage").css("filter","brightness(100%)")
 
 })
+$(document).ready(function() {
+	$(".playlistImage").each(function(){
+			$(this).css("max-height","300")
+			
+			    $(this).imagesLoaded(function() {
+			    	var width = $(this).css("width")
+			    	alert(width)
+					$(this).css("height",""+width)
+			    });
+	});
+});
+$(window).on('resize', function(){
+	$(".playlistImage").each(function(){
+		var width = $(this).css("width")
+		$(this).css("height",""+width)
+	});
 
-
+});
 $(".play").hover(function(){
 	$
 	$(this).css("filter","brightness(90%)")

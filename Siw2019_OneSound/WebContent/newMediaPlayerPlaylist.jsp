@@ -12,7 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>One Music - Modern Music HTML5 Template</title>
+    <title>One Sound</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -34,8 +34,8 @@
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
          <div id="mediaPlayerTopImage" class="container">
-        	<img id="mediaPlayerProfileImage" src="${brano.album.immagine}">
-        	<div id="albumName">${brano.album.titolo}<br><span id="artistName">${brano.utenteCaricatore.nickname}</span></div>
+        	<img id="mediaPlayerProfileImage" src="${playlist.immagine}">
+        	<div id="albumName">${playlist.nome}<br></div>
         </div>
 
     </section>
@@ -64,7 +64,7 @@
 						 <c:forEach items="${brani}" var="p">
 						 		
 						 	<li id="song${songsCount}"  data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
-								  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine }" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="play" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addImage" class="addB" src="img/add.png" alt=""></span>
 								  <c:if test="${p.preferito == true}">

@@ -89,7 +89,7 @@ $(".heart").on("click",function(){
 $(".play").on("click",function(){
 	
 	var type=$(this).parents("div:first").attr("id");
-	alert(type);
+	//alert(type);
 	var operation;
 	email=$(this).attr("data-email");
 	operation="getArtista?emailArtista="+email;

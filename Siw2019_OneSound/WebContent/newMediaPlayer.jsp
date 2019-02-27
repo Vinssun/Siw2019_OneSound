@@ -28,7 +28,74 @@
 <body>
 	
 	
-	<%@ include file="commonPages/topPart.jsp" %>
+	    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- Nav brand -->
+                        <a href="home" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu" style=" margin: auto;">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                	<li><a href="getProfile">Profile</a></li>
+                                    <li><a href="home">Home</a></li>
+                                    <li><a href="albums-store.jsp">Search</a></li>
+                                   
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                <div class="login-register-cart-button d-flex align-items-center" style="margin-left: 67px;">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn" style="display: flex;">
+                                        <c:if test="${name != null}">
+                                        	<p id="loginBtn" class="loginWelcome">Benvenuto ${name}</p>
+                                        	<a href="getLogin?logout=true"" id="loginBtn" style="margin: auto -33px auto 0;">Logout</a>
+                                    	</c:if>
+                                    	<c:if test="${name == null}">
+                                    		<a href="getLogin" id="loginBtn">Login / Register</a>
+                                    	</c:if>
+                                    	
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
 	
 
     <!-- ##### Breadcumb Area Start ##### -->
@@ -64,7 +131,7 @@
 						 <c:forEach items="${brani}" var="p">
 						 		
 						 	<li id="song${songsCount}"  data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
-								  <span id="imageSpan"><img id="coverImage" src="img/bg-img/s1.jpg" alt=""></span>
+								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine}" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="play" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addImage" class="addB" src="img/add.png" alt=""></span>
 								  <c:if test="${p.preferito == true}">

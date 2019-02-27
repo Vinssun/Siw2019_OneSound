@@ -95,6 +95,9 @@
 }
 
 #bottoneAlbum {
+	font-size: 16px;
+    font-weight: 700;
+	outline: none;
 	color: white;
 	background-color: green;
 	bottom: 0;
@@ -157,3 +160,6 @@
 	    width: 96%;
 	    margin: 0 0 0 0;
 }
+.playlistImage{
+
+    max-height: 300px;}

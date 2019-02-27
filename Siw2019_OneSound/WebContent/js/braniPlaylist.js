@@ -21,8 +21,7 @@ $(".addSongImageClass").on("click",function(){
 	var t = "pr";
 	var idB = $(this).attr("data-id");
 	var idP = $(this).attr("data-idPlaylist"); 
-	
-	if($(".addSongImageClass").attr("data-type")=="pb"){
+	if($(this).attr("data-type")=="pb"){
 		t = "pb";
 	}
 	
@@ -34,7 +33,8 @@ $(".addSongImageClass").on("click",function(){
         data: {tipo: t,idPlaylist: idP, brano: idB},
         	
   		dataType: "text",		
-		success: function (data){},
+		success: function (data){
+		},
 		error: function(){
 			window.location.href = "pageNotFound.jsp";
 		}

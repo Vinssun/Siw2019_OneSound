@@ -31,11 +31,9 @@
 					<c:forEach items="${playlists}" var="p">
 						<!-- Single Album -->
 						<div class="single-album p" id="divAlbum" data-idplaylist="${p.id}">
-							<img class="playlistImage" src="${p.immagine}" alt=""> 
+							<img class="playlistImage" src="${p.immagine}" data-nome="${p.nome}" alt=""> 
 							<div class="album-info">
-								<a href="#">
 									<h5>${p.nome}</h5>
-								</a>
 							</div>
 						</div>
 					</c:forEach>

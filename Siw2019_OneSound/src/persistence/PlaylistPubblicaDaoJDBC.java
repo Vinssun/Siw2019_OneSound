@@ -7,10 +7,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import model.Album;
 import model.PlaylistPubblica;
 import model.Utente;
-import persistence.dao.AlbumDao;
 import persistence.dao.PlaylistPubblicaDao;
 import persistence.dao.UtenteDao;
 
@@ -25,7 +23,36 @@ public class PlaylistPubblicaDaoJDBC implements PlaylistPubblicaDao {
 	
 	@Override
 	public PlaylistPubblica findByPrimaryKey(int id) {
-		return null;
+		Connection connection = this.dataSource.getConnection();
+		PlaylistPubblica p=null;
+		try {
+
+			String insert = "select nome,utente,immagine from playlist_pubblica WHERE id=?";
+
+			PreparedStatement statement = connection.prepareStatement(insert);
+			statement.setInt(1, id);
+			ResultSet result = statement.executeQuery();
+			if (result.next()) {
+				p=new PlaylistPubblica();
+				p.setId(id);
+				p.setNome(result.getString("nome"));
+				p.setImmagine(result.getString("immagine"));
+				Utente u = new Utente();
+				u.setEmail(result.getString("utente"));
+				p.setUtente(u);
+				
+			}
+
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+		return p;
 	}
 
 	@Override
@@ -309,6 +336,8 @@ public class PlaylistPubblicaDaoJDBC implements PlaylistPubblicaDao {
 		}
 		
 	}
+
+	
 
 	
 	

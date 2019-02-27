@@ -21,9 +21,7 @@
 						<div class="single-album p" id="divPlaylist" data-idplaylist="${p.id}">
 							<img class="playlistImage" src="${p.immagine}" alt=""> 
 							<div class="album-info">
-								<a href="#">
 									<h5>${p.nome}</h5>
-								</a>
 							</div>
 						</div>
 					</c:forEach>

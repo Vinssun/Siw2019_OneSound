@@ -72,14 +72,14 @@ $(function() {
         	CVV.addClass('success');
         }
        	if(valid ==1){
-            //alert("Everything is correct");
+            ////alert("Everything is correct");
        		$("#confirm-purchase").on("click",function(){
        			$.ajax({
        				type : 'Post',
        				url : "diventaPremium",
        				
        				success : function(data) {
-       					alert("ook")
+       					//alert("ook")
        					
        					$(".spinner").fadeOut();
        					//$('.spinner').css('display', 'none');

@@ -10,16 +10,16 @@ $(document).ready(function(){
 
 $(".genresImage,.genresName").on("click",function(){     
 	
-	alert("ricercagenere");
+	//alert("ricercagenere");
 	var genere=$(this).attr("data-id");
-	alert(genere)
+	//alert(genere)
 	callAjaxRicerca("getCanzoniGenere",genere);
 });
 
 $('#search').click(function(e){     
 	e.preventDefault();
 	e.stopPropagation();
-	alert("ricerca");
+	//alert("ricerca");
    
 	
    var r = new RegExp(/[a-zA-Z]+/);
@@ -27,7 +27,7 @@ $('#search').click(function(e){
    eVal =  $('#inputRicerca').val();
    
    
-   alert(eVal);
+   //alert(eVal);
 	
    if(r.test(eVal)){
 	   callAjaxRicerca("effettuaRicerca",eVal);
@@ -37,7 +37,7 @@ $('#search').click(function(e){
 //		        data: {nome: eVal},
 //		  		dataType: "text",		
 //				success: function (data){
-//					alert("SUCCESSO");
+//					//alert("SUCCESSO");
 //					$('#loading_screen').css('display','none');	
 //					$('#result').html(data);
 //				},

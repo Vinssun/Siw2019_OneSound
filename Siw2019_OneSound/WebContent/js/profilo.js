@@ -74,7 +74,7 @@ $('#infoProfilo').on('click',function(e) {
 	
 	
 	
-	alert("ciaox")
+	//alert("ciaox")
 	var eVal = "getInformazioniPersonali";
 
 	callAjaxProfilo(eVal);
@@ -95,7 +95,7 @@ $('#mieiAlbum').on('click',function(e) {
 	
 	
 	var eVal = "getMieiAlbum";
-	alert(eVal)
+	//alert(eVal)
 	callAjaxProfilo(eVal);
 });
 
@@ -212,7 +212,7 @@ $("#premiumAccount").on("click",function(){
 		url : "accountPremium",
 		
 		success : function(data) {
-			alert("ciaoo")
+			//alert("ciaoo")
 			$(".spinner").fadeOut();
 			//$('.spinner').css('display', 'none');
 			//$('#contenitore').css('display', 'block');
@@ -278,7 +278,7 @@ function callAjaxProfilo(eVal) {
 $("#files1").on("change", function(e) {
 	var files = e.target.files,
 	filesLength = files.length;
-	alert(filesLength)
+	//alert(filesLength)
 	for (var i = 0; i < filesLength; i++) {
 		var f = files[i]
 		var fileReader = new FileReader();
@@ -289,12 +289,12 @@ $("#files1").on("change", function(e) {
 			$("#immagineProfilo").attr("src",e.target.result)
 		});
 		fileReader.readAsDataURL(f);
-		alert("prima del formData")
+		//alert("prima del formData")
 		formData.append("immagineProfilo", files[i])
-		alert("dopo del formData")
+		//alert("dopo del formData")
 		 
 	}
-	alert("dopo")
+	//alert("dopo")
 	$(this).val('')
 	cambiaFoto();
 }); 
@@ -310,10 +310,10 @@ function cambiaFoto(){
     // ... Other options like success and etc
           		
 	success: function (data){
-		alert("successo")
+		//alert("successo")
 	},
 	beforeSend : function (){
-		alert("before")
+		//alert("before")
 	}
 	});
 	

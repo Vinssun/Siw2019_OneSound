@@ -41,7 +41,7 @@ $("#albumList").on("change",function() {
 		$("#titoloNuovoAlbum").slideUp()
 		
 		id = $("#albumList").find(":selected").attr("data-idAlbum")
-		//alert(id)
+		////alert(id)
 		
 		$("#listaBraniAlbum .lista").each(function(){
 			$(this).remove()
@@ -56,7 +56,7 @@ $("#albumList").on("change",function() {
 			success: function (data){
 				$("#contenitoreListe .spinner").hide();
 				var b = JSON.parse(data);
-				alert(b)
+				//alert(b)
 				b.forEach(function(obj){
 					$("<div data-id=\""+obj.id+" \"class=\"lista\">\r\n" + 
 							"	        			<span class=\"nome\">" +
@@ -254,7 +254,7 @@ function showFiles(files) {
 			"						<span data-file=\"file"+cont+"\"class=\"delete\"><i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i></span>\r\n" + 
 			"	        		</div>").appendTo("#listaBrani");
 		formData.append("file-"+cont, files[i])
-		alert("file-"+cont+"  "+formData.get("file"+cont))
+		//alert("file-"+cont+"  "+formData.get("file"+cont))
 		cont++
 		cont2++
 		activeSaveButton()
@@ -276,7 +276,7 @@ $(document).on('click','.fa-times-circle',function(){
 	
 	
 	
-	//alert(cont2)
+	////alert(cont2)
 	
 	id = $(this).parent().attr("data-id")
 	if(id!=null){
@@ -288,7 +288,7 @@ $(document).on('click','.fa-times-circle',function(){
 	        data: {idBrano: id},
 	  		dataType: "text",		
 			success: function (data){
-				alert("brano rimosso")
+				//alert("brano rimosso")
 				if( cont3 == 0){
 					 $("#listaBraniAlbum").hide();
 				}
@@ -454,7 +454,7 @@ function salva(){
 				   	obj.genere  = $(this).find("select").find(":selected").text();
 				   	obj.link = $(this).find("input[name=link]").val();
 					obj.idAlbum = idAlbum
-//					alert(nome+" "+genere+" "+link)
+//					//alert(nome+" "+genere+" "+link)
 					
 					
 					brani.push(obj);
@@ -470,7 +470,7 @@ function salva(){
 						success: function (data){
 
 							$("#contenitoreListe .spinner").hide();
-							alert("aggioranto")
+							//alert("aggioranto")
 							$("#complete").html("<strong>AGGIORNATO!</strong> L'album è stato aggioranto.")
 							$("#complete").slideDown()
 							window.setTimeout(function () {
@@ -505,7 +505,7 @@ function salva(){
 					nome = $(this).find("input[name=nomeBrano]").val()
 					genere = $(this).find("select").find(":selected").text();
 					link = $(this).find("input[name=link]").val()
-					alert(nome+" "+genere+" "+link)
+					//alert(nome+" "+genere+" "+link)
 					
 					formData.append("titolo-"+num, nome)
 					formData.append("genere-"+num, genere)
@@ -527,7 +527,7 @@ function salva(){
 					success: function (data){
 
 						$("#contenitoreListe .spinner").hide();
-						//alert("successo")
+						////alert("successo")
 						$("#complete").html("<strong>COMPLETATO!</strong> Le modfiche sono state salvate.")
 						$("#complete").slideDown()
 						window.setTimeout(function () {
@@ -548,10 +548,10 @@ function salva(){
 						$("#albumList").trigger("change");
 						
 						albumVuoti = albumVuoti.filter(item => item !== idA)
-						alert("ciaoooo"+ data)
+						//alert("ciaoooo"+ data)
 						var b = JSON.parse(data);
-						alert("weee "+ b)
-						alert($("#albumList").find(":selected").val())
+						//alert("weee "+ b)
+						//alert($("#albumList").find(":selected").val())
 						if($("#albumList").find(":selected").val() == "img/empty-album.png")
 							$('<option class="albumOption" value="'+b[0].link+'" data-idAlbum="'+b[0].id +'" >'+b[0].titolo+'</option>').appendTo("#albumList")
 					},
@@ -616,7 +616,7 @@ $("#svuotaAlbum").on("click",function(){
 		success: function (data){
 
 			$("#contenitoreListe .spinner").hide();
-			alert("svuotato")
+			//alert("svuotato")
 			$("#listaBraniAlbum .lista").each(function(){
 				$(this).remove()
 			})
@@ -651,7 +651,7 @@ $("#eliminaAlbum").on("click",function(){
 		success: function (data){
 
 			$("#contenitoreListe .spinner").hide();
-			alert("rimosso")
+			//alert("rimosso")
 			$('#myModal2').modal("hide")
 			$('option[value="img/empty-album.png"]').prop("selected", true);
 			$('option[data-idAlbum="'+id+'"]').remove();
@@ -718,7 +718,7 @@ function rimuoviAlbumVuoti(){
 function cercaSuFlickr() {
 	
 	var parola=$("#inputFlickr").val();
-	alert(parola);
+	//alert(parola);
 	
 	var partePrima = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=71542c171848da257b3caa214f7ed00f&text=";
 	var parteSeconda = "&format=json&nojsoncallback=1";
@@ -733,7 +733,7 @@ function cercaSuFlickr() {
 			success: function (data){
 				var json = JSON.parse(data);
 
-				alert(json.photos.photo[5].id);
+				//alert(json.photos.photo[5].id);
 				
 				var foto = "https://farm" + json.photos.photo[5].farm + ".staticflickr.com/" + json.photos.photo[5].server + "/" + json.photos.photo[5].id + "_" + json.photos.photo[5].secret + ".jpg";
 				$("#inputFlickrurl").val(foto)

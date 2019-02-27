@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     setCorrente();
     var f=$(".standardSpan").size();
-    
+    //alert(f)
     for(i=0;i<f;i++){
     	canzoni.push(false) ; 
     }
@@ -114,7 +114,7 @@ $(".heartB").on("click",function(){
 	}
 });
     
-$(".play").on("click",function(){
+$(".play,.playB").on("click",function(){
 	$(".standardSpan").css("background","black");
 	$(this).parents("li:first").css("background","#1d1d1d");
 	

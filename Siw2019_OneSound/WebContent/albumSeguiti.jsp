@@ -43,10 +43,8 @@
 						<img class="play"  data-idAlbum="${p.id}" data-id="${p.seguito}" src="img/play.png" alt="">
 						<img class="add" data-id="${p.id}" src="img/check.png" alt="">
 						<div class="album-info">
-							<a href="#">
 								<h5>${p.titolo}</h5>
 								 <h6 class = "testoBianco28 testo">${p.utenteCaricatore.nome} ${p.utenteCaricatore.cognome}</h6>
-							</a>
 						</div>
 					</div>
 	              </c:forEach>

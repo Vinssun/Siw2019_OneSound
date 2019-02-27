@@ -246,7 +246,7 @@ function check(val, regex) {
 
 function checkBorn(val, regex) {
 	if (val != null || val != "") {
-		//alert(val);
+		////alert(val);
 		if (regex.test(val)) {
 			var d = new Date();
 			var v = new Date(val);

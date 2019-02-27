@@ -120,3 +120,202 @@
 	font-size: 4vw;
 	margin: 56px 0 70px 0px;
 }
+/*********************/
+@charset "ISO-8859-1";
+
+#nickName{
+	font-variant-caps: all-petite-caps;
+}
+
+#nameSurname{
+	text-transform: capitalize;
+}
+
+.crop { 
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+}
+
+#playSongSpan, #addSongSpan ,#heartSongSpan{
+	width: 5%;
+	margin: auto;
+}
+
+
+#addImage,#playImage,#heartSongImage:hover {
+	cursor: pointer;
+}
+
+
+#titleSongSpan {
+	width: 25% !important; 
+	margin: auto;
+}
+
+#playImage, #addSongImage{
+	 width: 75%; 
+}
+#addSongImage{
+	transform:scale(2.7)
+}
+#addImage{
+	width: 85%
+}
+
+#outer {
+	min-height: 100%;
+	margin: auto;
+	border-top: none;
+	border-bottom: none;
+	position: relative;
+	text-align: left;
+	padding-bottom: 10%;
+}
+
+#base {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+* html #base {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+
+#mediaPlayerProfileImage {
+	object-fit: cover;
+	width: 250px;
+	height: 250px;
+}
+
+#albumName {
+	color: white;
+	font-size: 3vw;
+	margin-left: 20px;
+	margin-top: 2%;
+}
+
+#artistName {
+	font-size: smaller;
+}
+
+#mediaPlayerTopImage {
+	display: inline-flex;
+	width: 100%;
+	left: 50%;
+	position: relative;
+	z-index: 100;
+	-webkit-transform: translateX(-50%);
+	transform: translate(-50%, 40%);
+}
+
+#buttonImage {
+	width: 45%
+}
+
+#buttonImage:hover {
+	cursor: pointer;
+}
+
+#imageSpan {
+	width: 11%;
+	margin: auto;
+}
+
+#artistSpan, #albumSpan{
+	width: 15%;
+	margin: auto;
+}
+
+#genreSpan {
+	margin: auto;
+}
+
+#coverImage {
+	width: 70%;
+}
+
+#mediaPlayerBody {
+	padding-top: 2%;
+}
+
+#songsList li {
+	border-bottom: 1.2px solid;
+	border-color: #262626;
+	background: black;
+	color: white;
+}
+
+#songsList li {
+	display: inline-flex;
+}
+
+.standardSpan:hover {
+	background: #262626 !important;
+}
+
+@media ( max-width : 767px) {
+	#mediaPlayerProfileImage {
+		object-fit: cover;
+		width: 150px;
+		height: 150px;
+	}
+	#mediaPlayerTopImage {
+		display: inline-flex;
+		width: 100%;
+		left: 50%;
+		position: relative;
+		z-index: 100;
+		-webkit-transform: translateX(-50%);
+		transform: translate(-50%, 50%);
+	}
+	#albumName {
+		color: white;
+		font-size: 4vw;
+		margin-left: 20px;
+		margin-top: 50px;
+	}
+}
+
+@media ( max-width :1400px) {
+	#albumName {
+		color: white;
+		font-size: 4vw;
+		margin-left: 20px;
+		margin-top: 50px;
+	}
+}
+
+.audioplayer-playpause {
+	transform: translate(61%,-10%)
+}
+
+.audioplayer-time .audioplayer-time-current{
+	width: 100px!important;
+}
+
+.controls {
+	font-size: x-large;
+	color: gray;
+}
+
+#backButton:hover{
+	color:white;
+}
+#nextButton:hover{
+	color:white;
+}
+
+#nessunBrano{
+	text-align:-webkit-center;
+	margin-top:100px
+}
+#nessunBrano h1{
+	font-size: 48px;
+	margin: 0 30px 0 30px;
+}
