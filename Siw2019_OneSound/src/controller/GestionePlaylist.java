@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -134,9 +135,35 @@ public class GestionePlaylist extends HttpServlet {
 			int idPlaylist = Integer.parseInt(request.getParameter("idPlaylist"));
 			if (tipo.equals("pb")) {
 				pbDao.delete(idPlaylist);
-				;
+				List<PlaylistPubblica> pb = (List<PlaylistPubblica>)request.getSession().getAttribute("playlistsPb");
+				
+				if(pb != null) {
+					int del = -1;
+					for (int i = 0; i < pb.size(); i++) {
+						if(pb.get(i).getId() == idPlaylist) {
+							del = i;
+						}
+					}
+					if(del!=-1)
+						pb.remove(del);
+					request.getSession().setAttribute("playlistsPb", pb);
+				}
+				
 			} else if (tipo.equals("pr")) {
 				prDao.delete(idPlaylist);
+				List<PlaylistPrivata> pr = (List<PlaylistPrivata>)request.getSession().getAttribute("playlistsPr");
+				
+				if(pr != null) {
+					int del = -1;
+					for (int i = 0; i < pr.size(); i++) {
+						if(pr.get(i).getId() == idPlaylist) {
+							del = i;
+						}
+					}
+					if(del!=-1)
+						pr.remove(del);
+					request.getSession().setAttribute("playlistsPr", pr);
+				}
 			}
 
 		} else if (path.equals("/addPlaylistPrivata")) {
@@ -240,12 +267,27 @@ public class GestionePlaylist extends HttpServlet {
 				p.setImmagine(playlistImage);
 				p.setNome(titolo);
 				id = privDao.save(p);
+				List<PlaylistPrivata> pr = (List<PlaylistPrivata>)request.getSession().getAttribute("playlistsPr");
+				
+				if(pr == null) {
+					pr = new LinkedList<>();
+				}
+				pr.add(p);
+				request.getSession().setAttribute("playlistsPr", pr);
 			} else {
 				PlaylistPubblica p = new PlaylistPubblica();
 				p.setUtente(u);
 				p.setImmagine(playlistImage);
 				p.setNome(titolo);
 				id = pubbDao.save(p);
+				List<PlaylistPubblica> pb = (List<PlaylistPubblica>)request.getSession().getAttribute("playlistsPb");
+				
+				
+				if(pb == null) {
+					pb = new LinkedList<>();
+				}
+				pb.add(p);
+				request.getSession().setAttribute("playlistsPb", pb);
 			}
 
 			JSONArray j = new JSONArray();
