@@ -267,6 +267,7 @@ public class GestionePlaylist extends HttpServlet {
 				p.setImmagine(playlistImage);
 				p.setNome(titolo);
 				id = privDao.save(p);
+				p.setId(id);
 				List<PlaylistPrivata> pr = (List<PlaylistPrivata>)request.getSession().getAttribute("playlistsPr");
 				
 				if(pr == null) {
@@ -280,6 +281,7 @@ public class GestionePlaylist extends HttpServlet {
 				p.setImmagine(playlistImage);
 				p.setNome(titolo);
 				id = pubbDao.save(p);
+				p.setId(id);
 				List<PlaylistPubblica> pb = (List<PlaylistPubblica>)request.getSession().getAttribute("playlistsPb");
 				
 				
