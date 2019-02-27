@@ -270,6 +270,7 @@ public class GestionePlaylist extends HttpServlet {
 				p.setId(id);
 				List<PlaylistPrivata> pr = (List<PlaylistPrivata>)request.getSession().getAttribute("playlistsPr");
 				
+				
 				if(pr == null) {
 					pr = new LinkedList<>();
 				}
