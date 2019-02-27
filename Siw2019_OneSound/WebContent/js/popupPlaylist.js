@@ -44,7 +44,12 @@ $("#aggiungiBrano").on("click",function(){
         data: {tipo: t,idPlaylist: idP, brano: idB},
         	
   		dataType: "text",		
-		success: function (data){},
+		success: function (data){
+			$("#branoAggiunto").fadeIn(1000);
+		    setInterval(function(){$("#branoAggiunto").fadeOut()},3000);
+
+			
+		},
 		error: function(){
 			window.location.href = "pageNotFound.jsp";
 		}

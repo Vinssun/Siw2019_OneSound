@@ -86,6 +86,7 @@
 		</select> 
       </div>
       <div class="modal-footer">
+      <span id="branoAggiunto" style="float: left;color: green;display:none;">Il brano è stato aggiunto alla playlist</span>
         <button type="button" id="aggiungiBrano" class="btn btn-primary">Aggiungi</button>
       </div>
     </div>
