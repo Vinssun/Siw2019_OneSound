@@ -55,9 +55,7 @@
 				<div>
 					<h2 class="section-heading white testoBianco28">Non sono presenti album.</h2>
 				</div>
-				<div class="text-right">
-	            				 <button id = "bottoneAlbum" class="btn oneMusic-btn mt-30" type="button">Aggiungi Album</button>
-	         			</div>
+				
 	         			</div>
 	
 	         			</div>

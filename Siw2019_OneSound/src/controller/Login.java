@@ -76,7 +76,7 @@ public class Login extends HttpServlet {
 				req.getSession().setAttribute("playlistsPb", playlistsPb);
 				List<PlaylistPrivata> playlistsPr=prDao.findByUtenteCreatore(email);
 				req.getSession().setAttribute("playlistsPr", playlistsPr);
-				resp.sendRedirect("home");
+				resp.sendRedirect("getProfile");
 			} else {
 				String message = " La password non è corretta.";
 				req.setAttribute("Message", message);

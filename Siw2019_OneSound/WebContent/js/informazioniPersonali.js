@@ -32,7 +32,7 @@ $("#modificaProfilo").on('click', function(){
 
 		var nomeValido = nomec.match(/^[a-zA-Z]+(\s+[a-zA-Z]+)*$/);
 		var cognomeValido = cognomec.match(/^[a-zA-Z]+(\s+[a-zA-Z]+)*$/);
-		var passwordValida = true;//passc.match(/^(?=.*\W)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/);
+		var passwordValida = passc.match(/^(?=.*\W)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/);
 		var confermaPass = false;
 		var nickValido = true;
 

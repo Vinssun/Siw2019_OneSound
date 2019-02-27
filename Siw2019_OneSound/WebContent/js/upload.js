@@ -1,6 +1,8 @@
 /**
+
  * 
  */
+var globalCount=0;
 var saveButton = 0
 var cont = 0;
 var cont2 = 0; 
@@ -734,8 +736,9 @@ function cercaSuFlickr() {
 				var json = JSON.parse(data);
 
 				//alert(json.photos.photo[5].id);
-				
-				var foto = "https://farm" + json.photos.photo[5].farm + ".staticflickr.com/" + json.photos.photo[5].server + "/" + json.photos.photo[5].id + "_" + json.photos.photo[5].secret + ".jpg";
+				var count = Object.keys(json.photos.photo).length;
+				globalCount=(globalCount+1)%count;
+				var foto = "https://farm" + json.photos.photo[globalCount].farm + ".staticflickr.com/" + json.photos.photo[globalCount].server + "/" + json.photos.photo[globalCount].id + "_" + json.photos.photo[globalCount].secret + ".jpg";
 				$("#inputFlickrurl").val(foto)
 				$("#albumImageInput").val("")
 				$("#albumImage").attr("src",foto);

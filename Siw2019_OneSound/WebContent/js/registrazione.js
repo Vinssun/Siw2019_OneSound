@@ -49,7 +49,7 @@ jQuery(document).ready(
 						var nickValido = true;
 						var dataValida = true;
 
-						var passwordValida = true;// passc.match(/^(?=.*\W)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/);
+						var passwordValida = passwordc.match(/^(?=.*\W)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/);
 						var confermaPass = false;
 						
 						if(passwordc === ""){
@@ -167,11 +167,11 @@ jQuery(document).ready(
 							tuttiCampiValidi = false;
 						}
 						
-						if(tuttiCampiValidi){
+					/*	if(tuttiCampiValidi){
 							$("#errori").hide();
 						}else {
 							$("#errori").show();
-						}
+						}*/
 
 						if(tuttiCampiValidi && emailValida){
 							$("button[type=submit]").removeAttr("disabled");
