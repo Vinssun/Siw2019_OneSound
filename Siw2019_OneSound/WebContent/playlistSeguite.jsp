@@ -8,7 +8,7 @@
 	<div class="container">
 		 <div class="row">
                 <div class="col-12">
-                    <div class="section-heading white" style="width: 94%;left: 10%;">
+                    <div class="section-heading white">
                         <h2>Le mie Playlists seguite</h2>
                         </div>
                     </div>
@@ -16,6 +16,8 @@
             </div>
 		<div class="row" id ="contenitoreLista">
 			<div class="col-12" id="playlistList" data-type="pr">
+            <c:if test="${fn:length(playlists) > 0}">
+			
 					<c:forEach items="${playlists}" var="p">
 						<!-- Single Album -->
 						<div class="single-album p" id="divPlaylist" data-idplaylist="${p.id}">
@@ -26,8 +28,19 @@
 						</div>
 					</c:forEach>
 
+	</c:if>
 		</div>
 	</div>
+				<c:if test="${fn:length(playlists) < 1}">
+						<div class="row">
+               			<div class="col-12">
+						<div>
+							<h2 class="section-heading testoBianco28">Non segui alcuna playlist.</h2>
+						</div>
+
+						
+            			</div></div>
+					</c:if>
 </section>
 
   <script src="js/playlistSeguite.js"></script>
