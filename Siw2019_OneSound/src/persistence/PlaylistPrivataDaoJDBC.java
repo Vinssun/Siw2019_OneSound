@@ -168,7 +168,7 @@ public class PlaylistPrivataDaoJDBC implements PlaylistPrivataDao {
 		Connection connection = this.dataSource.getConnection();
 		try {
 
-			String insert = "INSERT INTO public.brano_playlist_pr(playlist_privata,brano)VALUES (?, ?);";
+			String insert = "INSERT IGNORE INTO public.brano_playlist_pr(playlist_privata,brano)VALUES (?, ?);";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, idPlaylist);
 			statement.setInt(2, brano);

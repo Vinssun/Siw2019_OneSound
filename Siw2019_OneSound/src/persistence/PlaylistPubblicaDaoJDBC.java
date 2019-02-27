@@ -272,7 +272,7 @@ public class PlaylistPubblicaDaoJDBC implements PlaylistPubblicaDao {
 		Connection connection = this.dataSource.getConnection();
 		try {
 
-			String insert = "INSERT INTO public.brano_playlist_pb(playlist_pubblica,brano)VALUES (?, ?);";
+			String insert = "INSERT IGNORE INTO public.brano_playlist_pb(playlist_pubblica,brano)VALUES (?, ?);";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, idPlaylist);
 			statement.setInt(2, brano);
