@@ -54,11 +54,6 @@
 					<h1>Nessun brano trovato.</h1>
 				</div>
 			</c:if>
-			<c:if test="${fn:length(brani) > 5}">
-				<div class="moreButton">
-					<button id="moreSongButton" class="btn oneMusic-btn m-2" type="button">Mostra altri</button>
-				</div>
-			</c:if>
 			
 	</div>
 	
@@ -99,5 +94,4 @@
 	
 
   <script src="js/following.js"></script>
-  <script src="js/showProduct.js"></script>
   <script src="js/popupPlaylist.js"></script>

@@ -43,7 +43,7 @@ $("#albumList").on("change",function() {
 		$("#titoloNuovoAlbum").slideUp()
 		
 		id = $("#albumList").find(":selected").attr("data-idAlbum")
-		////alert(id)
+		
 		
 		$("#listaBraniAlbum .lista").each(function(){
 			$(this).remove()
@@ -543,19 +543,23 @@ function salva(){
 							$(this).remove()
 						});
 						//$('option[value="img/empty-album.png"]').prop("selected", true);
-						
-						idA = $("#albumList").find(":selected").attr("data-idAlbum")
+						var b = JSON.parse(data);
+						var idA;
+						if($("#albumList").find(":selected").val() == "img/empty-album.png"){
+							idA= b[0].id;
+							$('<option class="albumOption" value="'+b[0].link+'" data-idAlbum="'+b[0].id +'" >'+b[0].titolo+'</option>').appendTo("#albumList")
+						}else{
+							idA = $("#albumList").find(":selected").attr("data-idAlbum")
+						}
 						$('option[data-idAlbum="'+idA+'"').prop("selected", true);
 						$("#albumList").find(":selected").val(b[0].link)
 						$("#albumList").trigger("change");
 						
 						albumVuoti = albumVuoti.filter(item => item !== idA)
 						//alert("ciaoooo"+ data)
-						var b = JSON.parse(data);
 						//alert("weee "+ b)
 						//alert($("#albumList").find(":selected").val())
-						if($("#albumList").find(":selected").val() == "img/empty-album.png")
-							$('<option class="albumOption" value="'+b[0].link+'" data-idAlbum="'+b[0].id +'" >'+b[0].titolo+'</option>').appendTo("#albumList")
+						
 					},
 			       
 			        beforeSend: function(){  
