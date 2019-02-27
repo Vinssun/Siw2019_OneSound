@@ -12,7 +12,12 @@ EMAIL                             PASSWORD<br />
 "ac.dc@gmail.com"                 "Siw2019!"<br />
 "annalisa.scarrone@gmail.com"     "Siw2019!"<br />
 "madman@gmail.com"                "Siw2019!"<br />
-
+<br/>
+Credenziali Utenti non Premium<br/>
+EMAIL                                   PASSWORD
+"bellusci.pierpaolo@gmail.com"          "Siw2019!"<br />
+"vincenzo.giandomenico97@gmail.com"     "Siw2019!"<br />
+<br/>
 Esempi carte di credito<br />
 Card Number           Security Code<br />
 4716108999716531      257<br />
