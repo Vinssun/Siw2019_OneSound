@@ -170,7 +170,7 @@ public class PlaylistPrivataDaoJDBC implements PlaylistPrivataDao {
 
 			String insert = " INSERT INTO public.brano_playlist_pr(playlist_privata,brano) \r\n" + 
 					"     SELECT ?, ? \r\n" + 
-					"     WHERE NOT EXISTS (SELECT * FROM test WHERE playlist_privata=? and brano=?);";
+					"     WHERE NOT EXISTS (SELECT * FROM brano_playlist_pr WHERE playlist_privata=? and brano=?);";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, idPlaylist);
 			statement.setInt(2, brano);
