@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/searchBar.css">
     <link rel="stylesheet" href="css/searchResult.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/aggiunte.css">
+   
     
 	<link rel="stylesheet" href="css/spinnerLoading.css">
     

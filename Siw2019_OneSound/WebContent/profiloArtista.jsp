@@ -20,7 +20,6 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/aggiunte.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/profiloArtista.css">
     <link rel="stylesheet" href="css/searchResult.css">
