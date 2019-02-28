@@ -21,7 +21,7 @@ var width = $("#albumImage").css("width")
 function resize(){
 	width = parseInt($("#iframeContent").css("max-width"))-32
 	
-	$("#videoYoutube").css("width",""+width)
+	$("#videoYoutube").css("width","100%")
 
 	$("#videoYoutube").css("height",""+(parseInt(width)/16*9))
 }
@@ -29,8 +29,7 @@ function resize(){
 $(window).on('resize', function(){
 	var width = $("#albumImage").css("width")
 	$("#albumImage").css("height",""+width)
-	w=$("#videoYoutube").css("width")
-	resize(w)
+	resize()
 });
 
 
@@ -852,5 +851,7 @@ $('#youtube').on('hidden.bs.modal', function () {
 $('#salvaLink').on("click",function(){
    	link = $("#listaVideoYoutube").find(":selected").attr("data-link");
    	$(linkInput).parent().prev().val(link)
+   	activeSaveButton()
+   	listaBraniAlbumChange=1
    	
 })

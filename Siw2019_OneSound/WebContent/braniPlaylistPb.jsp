@@ -44,7 +44,7 @@
 						<c:set var="songsCount" value="0"/>
 						 <c:forEach items="${brani}" var="p">
 						 		
-						 	<li id="song${songsCount}"  data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
+						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
 								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine }" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="playB" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addSongImage" class="addSongImageClass" data-id="${p.id}" data-type="pb" data-idPlaylist="${idPlaylist}" src="img/check.png" alt=""></span>
@@ -74,6 +74,7 @@
                                <source src=""> 
                          </audio>
                             <div class="controls">
+                            <i id="youTubeButton" data-linkYoutube="${brano.linkVideo}" data-toggle="modal" data-target="#youtube" class="fab fa-youtube" aria-hidden="true"></i>
                             <i class='fas fa-random' id="randomButton" data-premuto="false"></i>
                             <i class= "fas fa-step-backward" id="backButton"></i>
                             <i class="fas fa-step-forward" id="nextButton"></i>
@@ -92,3 +93,25 @@
 			</c:if>
  <script src="js/braniPlaylist.js"></script>
  <script src="js/mediaPlayer.js"></script>
+ 
+ <div class="modal fade  bd-example-modal-lg" id="youtube" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="iframeContent"class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Youtube videos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     	<label id="videoYoutubeLabel">Non è associato alcun video</label>
+        <iframe id="videoYoutube" src="${brano.linkVideo}" 
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

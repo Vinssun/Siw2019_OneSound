@@ -4,11 +4,48 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     setCorrente();
     var f=$(".standardSpan").size();
-    //alert(f)
     for(i=0;i<f;i++){
     	canzoni.push(false) ; 
     }
 });
+
+$("#youTubeButton").hover(function(){
+	$(this).css("color","red");
+},function(){
+	$(this).css("color","inherit");
+});
+
+$("#youTubeButton").on("click",function(){
+	resize()
+	if($(this).attr("data-linkYoutube")==""){
+		$("#videoYoutube").css("display","none")
+		$("#videoYoutubeLabel").css("display","block")
+	}else{
+		$("#videoYoutubeLabel").css("display","none")
+		$("#videoYoutube").css("display","block")
+	}
+	$(this).css("color","red");
+	$("audio").get(0).pause();
+	
+});
+
+function resize(){
+	width = parseInt($("#iframeContent").css("max-width"))-32
+	
+	$("#videoYoutube").css("width","100%")
+
+	$("#videoYoutube").css("height",""+(parseInt(width)/16*9))
+}
+
+$(window).on('resize', function(){
+	resize()
+});
+
+
+$('#youtube').on('hidden.bs.modal', function () {
+	$('#videoYoutube').attr('src',$('#videoYoutube').attr('src'));
+	$("#youTubeButton").css("color","inherit");
+})
 
 $(".myAudio").bind('ended', function(){
 	var f=$(".standardSpan").size();
@@ -93,6 +130,8 @@ var f=$(".standardSpan").size();
 	}
 	
 	$("audio").attr("src",$("#song"+count).attr("data-link"));
+	$("#videoYoutube").attr("src",$("#song"+count).attr("data-linkYoutube"));
+	$("#youTubeButton").attr("data-linkYoutube",$("#song"+count).attr("data-linkYoutube"));
 	$("audio").attr("data-songCorrente",$("#song"+count).attr("data-idSong"));
 	$("#titoloMediaPlayer").text($("#song"+count).attr("data-titolo"));
 	setCorrente();
@@ -120,6 +159,8 @@ $(".play,.playB").on("click",function(){
 	
 	
 	$("audio").attr("src",$(this).parents("li:first").attr("data-link"));
+	$("#videoYoutube").attr("src",$(this).parents("li:first").attr("data-linkYoutube"));
+	$("#youTubeButton").attr("data-linkYoutube",$(this).parents("li:first").attr("data-linkYoutube"));
 	$("audio").attr("data-songCorrente",$(this).parents("li:first").attr("data-idSong"));
 	
 	$("#titoloMediaPlayer").text($(this).parents("li:first").attr("data-titolo"));
@@ -149,6 +190,8 @@ $("#backButton").on("click",function(){
 	
 	
 	$("audio").attr("src",$("#song"+count).attr("data-link"));
+	$("#videoYoutube").attr("src",$("#song"+count).attr("data-linkYoutube"));
+	$("#youTubeButton").attr("data-linkYoutube",$("#song"+count).attr("data-linkYoutube"));
 	$("audio").attr("data-songCorrente",$("#song"+count).attr("data-idSong"));
 	
 	$("#titoloMediaPlayer").text($("#song"+count).attr("data-titolo"));
