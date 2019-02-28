@@ -13,14 +13,26 @@ var albumChange = 0
 var albumVuoti=[]
 var formData = new FormData();
 var errore = 0
+var linkInput = undefined;
 
 var width = $("#albumImage").css("width")
 	$("#albumImage").css("height",""+width)
 
+function resize(){
+	width = parseInt($("#iframeContent").css("max-width"))-32
+	
+	$("#videoYoutube").css("width",""+width)
+
+	$("#videoYoutube").css("height",""+(parseInt(width)/16*9))
+}
+
 $(window).on('resize', function(){
 	var width = $("#albumImage").css("width")
 	$("#albumImage").css("height",""+width)
+	w=$("#videoYoutube").css("width")
+	resize(w)
 });
+
 
 $("#albumList").on("change",function() {
 	$("#listaBrani #titolo1").text('')
@@ -62,7 +74,7 @@ $("#albumList").on("change",function() {
 				b.forEach(function(obj){
 					$("<div data-id=\""+obj.id+" \"class=\"lista\">\r\n" + 
 							"	        			<span class=\"nome\">" +
-							"<input type=\"text\" class=\"form-control brano\" value=\""+obj.titolo+"\" name =\"nomeBrano\"></span>\r\n" + 
+							"<input type=\"text\" class=\"selectpicker form-control brano\" value=\""+obj.titolo+"\" name =\"nomeBrano\"></span>\r\n" + 
 							"	        			<span class=\"genere\">\r\n" + 
 							"	        				<select class=\"form-control\" class=\"listaCategorie\" >\r\n" + 
 							"								<option disabled selected hidden >"+obj.genere+"</option>\r\n" + 
@@ -74,7 +86,14 @@ $("#albumList").on("change",function() {
 							"								<option class=\"genereOption\" >dance</option>\r\n" + 
 							"							</select>\r\n" + 
 							"						</span>\r\n" + 
-							"	        			<span class=\"link\"><input placeholder ='Opzionale' type=\"text\" class=\"form-control brano\" value=\""+obj.linkYoutube+"\" name =\"link\"></span>\r\n" +
+							"	        			<span class=\"link\">"+//<input placeholder ='Scegli un video youtube' type=\"text\" class=\"form-control brano\" value=\""+obj.linkYoutube+"\" name =\"link\"></span>\r\n" +
+							"							<div class=\"input-group mb-3\">\r\n" + 
+							"							  	<input type=\"text\" class=\"form-control brano\" name =\"link\" value=\""+obj.linkYoutube+"\" placeholder=\"Scegli un video\" readonly>\r\n" + 
+							"							 	 <div class=\"input-group-append\">\r\n" + 
+							"							    <button class=\"btn btn-outline-secondary youtube\" type=\"button\" data-toggle=\"modal\" data-target=\"#youtube\">Video Youtube</button>\r\n" + 
+							"							  </div>\r\n" + 
+							"							</div>"+
+							"						</span>"+
 							"						<span data-id=\""+obj.id+"\"class=\"delete\"><i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i></span>\r\n" + 
 							"	        		</div>").appendTo("#listaBraniAlbum");
 					cont3++
@@ -252,7 +271,14 @@ function showFiles(files) {
 			"								<option class=\"genereOption\" >dance</option>\r\n" + 
 			"							</select>\r\n" + 
 			"						</span>\r\n" + 
-			"	        			<span class=\"link\"><input placeholder ='Opzionale'  type=\"text\" class=\"form-control brano\" name =\"link\"></span>\r\n" +
+			"	        			<span class=\"link\">"+//<input placeholder ='Scegli un video youtube' type=\"text\" class=\"form-control brano\" value=\""+obj.linkYoutube+"\" name =\"link\"></span>\r\n" +
+			"							<div class=\"input-group mb-3\">\r\n" + 
+			"							  	<input type=\"text\" class=\"form-control brano\" name =\"link\" placeholder=\"Scegli un video\" readonly>\r\n" + 
+			"							 	 <div class=\"input-group-append\">\r\n" + 
+			"							    <button class=\"btn btn-outline-secondary youtube\" type=\"button\" data-toggle=\"modal\" data-target=\"#youtube\">Video Youtube</button>\r\n" + 
+			"							  </div>\r\n" + 
+			"							</div>"+
+			"						</span>"+
 			"						<span data-file=\"file"+cont+"\"class=\"delete\"><i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i></span>\r\n" + 
 			"	        		</div>").appendTo("#listaBrani");
 		formData.append("file-"+cont, files[i])
@@ -763,3 +789,68 @@ function cercaSuFlickr() {
 	        
 	    });
 	}
+
+$(document).on('click','.youtube',function(){
+	resize()
+	searchTerm = $(this).parent().parent().parent().parent().find("input[name=nomeBrano]").val()
+//	alert( $(this).parent().parent().parent().find("input[name=nomeBrano]").val())
+	$("#searchvideo").val(searchTerm)
+	linkInput = this
+	getRequest(searchTerm)
+});
+
+function getRequest(searchTerm) {
+    var url = 'https://www.googleapis.com/youtube/v3/search';
+    //alert(searchTerm)
+    var params = {
+        maxResults : '25',
+        type:"video",
+        part: 'snippet',
+        key: 'AIzaSyA64Lf_pi2v0KJ4e3mss91bGXaVV08ACPM',
+        q: searchTerm
+    };
+
+    $.getJSON(url, params, showResults);
+}
+function showResults(results) {
+    var html = "";
+    var entries = results.items;
+    
+    $.each(entries, function (index, value) {
+        var title = value.snippet.title;
+        var thumbnail = value.snippet.thumbnails.default.url;
+        /*html += '<p>' + title + '</p>';
+        html += '<img src="' + thumbnail + '">';*/
+        //alert(value.id.videoId)
+        if(value.id.videoId != undefined){
+	        /*html+='<iframe width="1216" height="513"'+
+			' src="https://www.youtube.com/embed/'+ value.id.videoId +'"'+
+			' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'*/
+        	html+= '<option data-link="https://www.youtube.com/embed/'+value.id.videoId+'">'+title+'</option>\r\n'
+		}
+		}); 
+    
+   
+   	$("#listaVideoYoutube").html(html);
+   	$('#listaVideoYoutube').first().prop("selected", true);
+   	link = $("#listaVideoYoutube").find(":selected").attr("data-link");
+   //	alert(link)
+	$('#videoYoutube').attr('src',link);
+}
+$("#listaVideoYoutube").on("change",function(){
+	link = $(this).find(":selected").attr("data-link");
+	$('#videoYoutube').attr('src',link);
+})
+
+$("#cercaSuYoutube").on("click",function(){
+	getRequest($("#searchvideo").val())
+})
+$('#youtube').on('hidden.bs.modal', function () {
+	$('#videoYoutube').attr('src','');
+	$("#searchvideo").val("")
+})
+$('#salvaLink').on("click",function(){
+   	link = $("#listaVideoYoutube").find(":selected").attr("data-link");
+   	$(linkInput).parent().prev().val(link)
+   	
+})

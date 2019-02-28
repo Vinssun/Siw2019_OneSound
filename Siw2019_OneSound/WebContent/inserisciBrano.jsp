@@ -279,6 +279,41 @@
 </div>
     
 
+
+<!-- Modal -->
+<div class="modal fade  bd-example-modal-lg" id="youtube" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="iframeContent"class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Youtube videos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     	
+        <iframe id="videoYoutube" src="" 
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h6 for="searchvideo">Ricerca su youtube</h6>
+        <div class="input-group mb-3">
+		  <input id="searchvideo"type="text" class="form-control" placeholder="Cerca " >
+		  <div class="input-group-append">
+		    <button id="cercaSuYoutube" class="btn btn-outline-secondary" type="button">Youtube</button>
+		  </div>
+		</div>
+		<h6 for="listaVideoYoutube">Lista video trovati</h6>
+       <select class="form-control" id="listaVideoYoutube" > 
+			
+		</select> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="salvaLink"type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
