@@ -504,7 +504,6 @@ function salva(){
 								$("#complete").slideUp()
 						    }, 5000);
 						},
-				       
 				        beforeSend: function(){  
 
 							$("#contenitoreListe .spinner").show();
