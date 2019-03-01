@@ -116,6 +116,7 @@ input:-webkit-autofill:active  {
 	width:30%;
 	padding:20px;
 }
+
 #albumImage{
 	object-fit: cover;
 	width: 100%;
@@ -539,4 +540,21 @@ text-transform: uppercase;
 }
 #spinnerInserimento{
 	position:inherit;
+}
+
+@media (max-width:767px){
+#album{
+	text-align: left;
+    width: 30%;
+    min-width: 342px;
+    margin: auto;
+    padding: 20px;
+}
+
+.lista{
+    display: block;
+}
+#contenitoreListe{
+	margin: auto;
+}
 }
