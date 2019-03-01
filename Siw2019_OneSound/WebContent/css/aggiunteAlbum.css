@@ -160,6 +160,11 @@
 	    width: 96%;
 	    margin: 0 0 0 0;
 }
+.albumContainer{
+
+    max-width: 300px;
+ }
 .playlistImage{
 
-    max-height: 300px;}
+    max-height: 300px;
+ }

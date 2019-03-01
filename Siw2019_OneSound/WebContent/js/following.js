@@ -164,11 +164,27 @@ $(".addAlbum,.addPlaylist").hover(function(){
 
 
 $(".add").on("click",function(){
+	
+	
+	
+	
+	
+	
 	if($(this).attr('src') == "img/add.png"){
+		var follower=parseInt($("[data-listAlbumFollower="+$(this).attr("data-id")+"]").text());
+		
+		$("[data-listAlbumFollower="+$(this).attr("data-id")+"]").text(follower+1);
+		$("[data-albumFollower="+$(this).attr("data-id")+"]").text(follower+1);
+		
 		id2=$(this).attr("data-id");
 		call2Ajax("seguiAlbum",id2);
 		$(this).attr('src','img/check.png');
 	}else if($(this).attr('src') == "img/remove.png"){
+		var follower=parseInt($("[data-listAlbumFollower="+$(this).attr("data-id")+"]").text());
+		
+		$("[data-listAlbumFollower="+$(this).attr("data-id")+"]").text(follower-1);
+		$("[data-albumFollower="+$(this).attr("data-id")+"]").text(follower+1);
+		
 		id2=$(this).attr("data-id");
 		call2Ajax("unfollowAlbum",id2);
 		$(this).attr('src','img/add.png');
@@ -215,11 +231,17 @@ $(".heartB").on("click",function(){
 
 
 $(".heart").on("click",function(){
+	
+	
 	if($(this).attr('src') == "img/empty-heart.png"){
+		var follower=parseInt($(this).parent().next().children(":nth-child(3)").text());
+		$(this).parent().next().children(":nth-child(3)").text(follower+1)
 		id2=$(this).attr("data-email");
 		call2Ajax("seguiUtente",id2);
 		$(this).attr('src','img/full-heart.png');
 	}else{
+		var follower=parseInt($(this).parent().next().children(":nth-child(3)").text());
+		$(this).parent().next().children(":nth-child(3)").text(follower-1)
 		id2=$(this).attr("data-email");
 		call2Ajax("unfollowUtente",id2);
 		$(this).attr('src','img/empty-heart.png');

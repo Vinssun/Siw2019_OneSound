@@ -76,7 +76,7 @@
                                     <div class="login-register-btn" style="display: flex;">
                                         <c:if test="${name != null}">
                                         	<p id="loginBtn" class="loginWelcome">Benvenuto ${name}</p>
-                                        	<a href="getLogin?logout=true"" id="loginBtn" style="margin: auto -33px auto 0;">Logout</a>
+                                        	<a href="getLogin?logout=true" id="loginBtn" style="margin: auto -33px auto 0;">Logout</a>
                                     	</c:if>
                                     	<c:if test="${name == null}">
                                     		<a href="getLogin" id="loginBtn">Login / Register</a>

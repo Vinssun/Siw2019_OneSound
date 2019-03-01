@@ -91,5 +91,3 @@
 </div>
     <script src="js/following.js"></script>
      <script src="js/playlist.js"></script>
-     
-     
