@@ -18,8 +18,8 @@
                     <div class="section-heading white">
                         <h2>Il mio profilo</h2>
                         <div class="testoBianco28 following">
-                        	<i id = "followArtista2" class="fa fa-heart cuore spostaSotto">
-                                <span class="counter">${utente.follower}</span>
+                        	<i id = "followArtista2">
+                                <span>Hai ${utente.follower} follower</span>
                           	</i>
                         </div>
                         
@@ -78,7 +78,7 @@
 						      </div> 
 						    </div>
 						    <div id="confermaPass"class="form-group col-md-6">
-						     <label for="inputEmail4" ">Conferma Password</label>
+						     <label for="inputEmail4">Conferma Password</label>
                               <input type="password" class="form-control" id="confirmPassword" placeholder="Conferma Password"  >
                                <div id = "confirmPasswordErr" class="invalid-tooltip">
 						        	La password non corrisponde

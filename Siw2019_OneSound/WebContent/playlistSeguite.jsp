@@ -32,15 +32,14 @@
 		</div>
 	</div>
 				<c:if test="${fn:length(playlists) < 1}">
-						<div class="row">
                			<div class="col-12">
 						<div>
 							<h2 class="section-heading testoBianco28">Non segui alcuna playlist.</h2>
 						</div>
 
 						
-            			</div></div>
-					</c:if>
+            			</div>
+            			</c:if>
 </section>
 
   <script src="js/playlistSeguite.js"></script>

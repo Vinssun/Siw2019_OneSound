@@ -85,7 +85,6 @@ $("#modificaProfilo").on('click', function(){
 		
 		
 		if (nomeValido && cognomeValido && passwordValida && confermaPass && nickValido) {
-			alert("sto aggiornando");
 			var utente = {
 				name : $('#nome').val(),
 				surname : $('#cognome').val(),

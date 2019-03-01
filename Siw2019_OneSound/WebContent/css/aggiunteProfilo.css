@@ -128,8 +128,7 @@ input[type=date]::-webkit-inner-spin-button {
 
 #followArtista2 {
 	font-size: large;
-	display: grid;
-	transform: translate(-250%, -100%);
+	color:white;
 }
 
 .lunghezza {
