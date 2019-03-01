@@ -537,3 +537,6 @@ text-transform: uppercase;
 .album-info h6.testoBianco28{
 	font-size:15px;
 }
+#spinnerInserimento{
+	position:inherit;
+}

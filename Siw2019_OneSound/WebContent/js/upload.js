@@ -498,7 +498,7 @@ function salva(){
 
 							$("#contenitoreListe .spinner").hide();
 							//alert("aggioranto")
-							$("#complete").html("<strong>AGGIORNATO!</strong> L'album è stato aggioranto.")
+							$("#complete").html("<strong>AGGIORNATO!</strong> L'album \350 stato aggioranto.")
 							$("#complete").slideDown()
 							window.setTimeout(function () {
 								$("#complete").slideUp()
