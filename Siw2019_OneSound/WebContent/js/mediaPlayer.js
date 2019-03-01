@@ -293,7 +293,8 @@ $("#lyricsButton").on("click",function(){
 	$("#lyrics").text( latinConverter(x))*/
 	artist=$("#lyricsButton").attr("data-artista")
 	song=$("#lyricsButton").attr("data-titolo")
-	
+	//alert("artista: "+artist)
+	//alert("song: "+song)
 	//getRequest(artist,song)
 	$("#lyrics").text("");
 	$.ajax({

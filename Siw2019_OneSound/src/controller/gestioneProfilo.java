@@ -4,13 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -26,7 +24,6 @@ import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.google.api.services.drive.model.File;
@@ -45,7 +42,6 @@ import persistence.dao.BranoDao;
 import persistence.dao.PlaylistPrivataDao;
 import persistence.dao.PlaylistPubblicaDao;
 import persistence.dao.UtenteDao;
-import utility.BranoUtility;
 
 /**
  * Servlet implementation class gestioneProfilo
@@ -109,7 +105,8 @@ public class gestioneProfilo extends HttpServlet {
 		}else if(path.equals("/getPreferenzeBrani")) {
 			List<Brano> brani=bDao.getPreferenzeBrani(email);
 			req.setAttribute("brani", brani);
-				
+			Brano brano=brani.get(0);
+			req.setAttribute("brano", brano);	
 			rd = req.getRequestDispatcher("braniPreferiti.jsp");
 			rd.forward(req, resp);
 		}

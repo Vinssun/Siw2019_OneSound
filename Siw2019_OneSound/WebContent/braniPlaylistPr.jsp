@@ -44,7 +44,7 @@
 						<c:set var="songsCount" value="0"/>
 						 <c:forEach items="${brani}" var="p">
 						 		
-						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
+						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}"  data-artista="${ p.utenteCaricatore.nickname}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
 								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine }" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="playB" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addSongImage" class="addSongImageClass" data-id="${p.id}" data-type="pr" data-idPlaylist="${idPlaylist}" src="img/check.png" alt=""></span>
@@ -120,7 +120,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Lyrics</h5>
+        <h1 class="modal-title" id="exampleModalLongTitle">Lyrics</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

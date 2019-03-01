@@ -130,7 +130,7 @@
 						<c:set var="songsCount" value="0"/>
 						 <c:forEach items="${brani}" var="p">
 						 		
-						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
+						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}"  data-artista="${ p.utenteCaricatore.nickname}" class="list-group-item standardSpan">
 								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine }" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="play" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addImage" class="addB" src="img/add.png" alt=""></span>
