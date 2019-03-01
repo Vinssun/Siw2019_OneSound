@@ -79,6 +79,7 @@
                             <i class= "fas fa-step-backward" id="backButton"></i>
                             <i class="fas fa-step-forward" id="nextButton"></i>
                             <i class='fas fa-sync-alt' id="loopButton" data-premuto="false"></i>
+                            <i id="lyricsButton" class="fa fa-align-justify" data-artista="${brano.utenteCaricatore.nickname}" data-titolo="${brano.titolo}" aria-hidden="true" data-toggle="modal" data-target="#lyricsModal" ></i>
                             </div>
                         </div>
 	                      
@@ -91,8 +92,6 @@
 					<h1 style="color:white;">La playlist non contiene brani.</h1>
 				</div>
 			</c:if>
- <script src="js/braniPlaylist.js"></script>
- <script src="js/mediaPlayer.js"></script>
  
  <div class="modal fade  bd-example-modal-lg" id="youtube" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div id="iframeContent"class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -115,3 +114,27 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="lyricsModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Lyrics</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label id = "lyrics"></label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <script src="js/braniPlaylist.js"></script>
+ <script src="js/mediaPlayer.js"></script>

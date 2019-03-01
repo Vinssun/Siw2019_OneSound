@@ -45,7 +45,7 @@ jQuery(document).ready(
 
 						var nomeValido = nome.test(namec);
 						var cognomeValido = nome.test(surnamec);
-						var emailValida = regexEmail.test(emailc);
+						//var emailValida = regexEmail.test(emailc);
 						var nickValido = true;
 						var dataValida = true;
 
@@ -146,18 +146,7 @@ jQuery(document).ready(
 							$("#date").removeClass("invalideInput");
 							$("#asteriscoData").hide();
 						}
-						if(!emailValida){
-							//$("#date").css("background-color", "#ff00004a");
-							$("#email").addClass("invalideInput");
-							$("#email").removeClass("valideInput");
-							
-							$("#asteriscoData").show();
-						}else {
-							//$("#date").css("background-color", "white");
-							$("#email").addClass("valideInput");
-							$("#email").removeClass("invalideInput");
-							$("#asteriscoData").hide();
-						}
+						
 						
 						
 						
@@ -196,8 +185,8 @@ jQuery(document).ready(
 
 							valide = getValueForm();
 						}
-
-						checkProseguiButton(valide);
+						if(email = true)
+							checkProseguiButton(valide);
 					});
 					
 					$("input[type = email").bind("change paste keyup",function() {
@@ -218,7 +207,7 @@ jQuery(document).ready(
 													if (p.email == "presente") {
 														$("#email").addClass("invalideInput");
 														$("#email").removeClass("valideInput");
-														$("#infoEmail").text("Email già presente.");				
+														$("#infoEmail").text("Email gi\340 presente.");				
 														$("button[type=submit]").attr("disabled","disabled");
 														email = false;
 													}

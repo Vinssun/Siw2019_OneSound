@@ -124,7 +124,6 @@
 	<script src="js/active.js"></script>
 	
 	<script src="js/registrazione.js"></script>
-	<!-- <script src="js/registrazione2.js"></script> -->
 </body>
 
 </html>

@@ -170,6 +170,7 @@
                             <i class= "fas fa-step-backward" id="backButton"></i>
                             <i class="fas fa-step-forward" id="nextButton"></i>
                             <i class='fas fa-sync-alt' id="loopButton" data-premuto="false"></i>
+                            <i id="lyricsButton" class="fa fa-align-justify" data-artista="${brano.utenteCaricatore.nickname}" data-titolo="${brano.titolo}" aria-hidden="true" data-toggle="modal" data-target="#lyricsModal" ></i>
                             </div>
                         </div>
 	                      
@@ -235,7 +236,27 @@
     </div>
   </div>
 </div>
-    
+ 
+<!-- Modal -->
+<div class="modal fade" id="lyricsModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Lyrics</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label id = "lyrics"></label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

@@ -80,7 +80,7 @@
 			 
 					<li id="song${songsCount}" data-idSong="${p.id}" class="list-group-item standardSpan songElement">
 					  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine}" alt=""></span>
-					  <span id="playSongSpan"><img data-type="brano" id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
+					  <span id="playSongSpan"  data-type="brano"><img data-type="brano" data-id="${p.id }" data-idAlbum="${p.album.id }" id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
 					  <span id="addSongSpan"><img id="addImage" class="addB" src="img/darkAdd.png" alt=""></span>
 					  <c:if test="${p.preferito == true}">
 	                       	 		<span id="heartSongSpan"><img id="heartSongImage" data-id="${p.id}" class="heartB" src="img/dark-full-heart.png" alt=""></span>
@@ -132,7 +132,7 @@
 			
 					<li id="album${albumCount}" class="list-group-item standardSpan albumElement">
 					  <span id="imageSpan"><img id="coverImage" src="${p.immagine}" alt=""></span>
-					  <span id="playSpan"><img data-type="album" id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
+					  <span id="playSpan" data-type="album" ><img data-type="album" id="playImage" data-idAlbum="${p.id }"class="playB" src="img/darkPlay.png" alt=""></span>
 					   <c:if test="${p.seguito == true}">
 	                       	 		<span id="addSpan"><img id="addImage" data-id="${p.id}" class="addAlbum" src="img/check.png" alt=""></span>
 	                   </c:if>
@@ -174,9 +174,9 @@
 					</li>
 			<c:forEach items="${playlists}" var="p"> 
 			<!-- foreach --> 
-					<li id="playlist${playlistCount}" class="list-group-item standardSpan playlistElement">
+					<li id="playlist${playlistCount}"class="list-group-item standardSpan playlistElement">
 					  <span id="imageSpan"><img id="coverImage" src="${p.immagine }" alt=""></span>
-					  <span id="playSpan"><img data-type="playlist"  id="playImage" class="playB" src="img/darkPlay.png" alt=""></span>
+					  <span id="playSpan"  data-type="playlist"><img data-type="playlist"  id="playImage" data-idPlaylist="${p.id }" class="playB" src="img/darkPlay.png" alt=""></span>
 					   <c:if test="${p.seguito == true}">
 	                       	 		<span id="addSpan"><img id="addImage" data-id="${p.id}" class="addPlaylist" src="img/check.png" alt=""></span>
 	                   </c:if>    	 	

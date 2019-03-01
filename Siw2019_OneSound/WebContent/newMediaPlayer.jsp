@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -130,7 +130,7 @@
 						<c:set var="songsCount" value="0"/>
 						 <c:forEach items="${brani}" var="p">
 						 		
-						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
+						 	<li id="song${songsCount}"  data-linkYoutube="${p.linkVideo}" data-count="${songsCount}" data-idSong="${p.id}" data-link="${p.linkBrano}" data-artista="${p.utenteCaricatore.nickname}" data-titolo="${p.titolo}" class="list-group-item standardSpan">
 								  <span id="imageSpan"><img id="coverImage" src="${p.album.immagine}" alt=""></span>
 								  <span id="playSongSpan"><img id="playImage" class="play" src="img/play.png" alt=""></span>
 								  <span id="addSongSpan"><img id="addImage" class="addB" src="img/add.png" alt=""></span>
@@ -170,6 +170,7 @@
                             <i class= "fas fa-step-backward" id="backButton"></i>
                             <i class="fas fa-step-forward" id="nextButton"></i>
                             <i class='fas fa-sync-alt' id="loopButton" data-premuto="false"></i>
+                            <i id="lyricsButton" class="fa fa-align-justify" data-artista="${brano.utenteCaricatore.nickname}" data-titolo="${brano.titolo}" aria-hidden="true" data-toggle="modal" data-target="#lyricsModal" ></i>
                             </div>
                         </div>
 	                      
@@ -236,6 +237,25 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="lyricsModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Lyrics</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label id = "lyrics"></label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     
